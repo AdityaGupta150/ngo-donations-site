@@ -1,0 +1,15 @@
+name: "Rebase Pulls"
+
+on:
+  pull_request:
+  schedule:
+    - cron: '0 22 * * 0'
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Rebase Pulls
+      uses: peter-evans/rebase@v1.0.2
