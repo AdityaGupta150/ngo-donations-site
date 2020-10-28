@@ -1,7 +1,7 @@
 # muadsasceIN
 > An ngo-donations-website
 
-This is random
+This is part 2 random
 
 ### Problems Addressed:
 - Countering problems faced by NGO(s) workers while searching for food , clothes or other required necessities for their organisations to be distributed among needy people.
