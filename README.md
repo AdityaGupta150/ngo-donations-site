@@ -6,7 +6,7 @@ fsdjlk
 ### Problems Addressed:
 - Countering problems faced by NGO(s) workers while searching for food , clothes or other required necessities for their organisations to be distributed among needy people.
 There are a lot of food items that go waste in hotels, mess, etc. which can be reduced if it's reported to some organization which can use it to serve a better purpose and provide it to people in need. 
-- To help hotel workers or anyone who wants to donate anything inform the concerned organisation that they are willing to provide the required thing.For instance people can update on the website that they have some woollen clothes(or old clothes) and are searching for ngos who can distribute them to the needy.
+- To help hotel workers or anyone who wantasdknasds to donate anything inform the concerned organisation that they are willing to provide the required thing.For instance people can update on the website that they have some woollen clothes(or old clothes) and are searching for ngos who can distribute them to the needy.
  
 ### Overview:
 
