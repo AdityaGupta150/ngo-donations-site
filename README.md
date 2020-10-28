@@ -1,6 +1,8 @@
 # muckIN
 > An ngo-donations-website
 
+This is random
+
 ### Problems Addressed:
 - Countering problems faced by NGO(s) workers while searching for food , clothes or other required necessities for their organisations to be distributed among needy people.
 There are a lot of food items that go waste in hotels, mess, etc. which can be reduced if it's reported to some organization which can use it to serve a better purpose and provide it to people in need. 
