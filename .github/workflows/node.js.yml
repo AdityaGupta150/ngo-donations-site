@@ -17,8 +17,10 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd server
+    - name: cd to server/
+      shell: bash
+      run: cd server/
     - run: npm install
-    - run: npm start
+    - run: npm test
       env:
         CI: true
