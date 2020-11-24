@@ -19,7 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: cd to server/
       shell: bash
-      run: `cd ./server`
+      working-directory: ./server
+      run: pwd
     - run: npm install
     - run: npm test
       env:
