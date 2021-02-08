@@ -13,6 +13,6 @@ jobs:
       - uses: akhileshns/heroku-deploy@v3.10.9 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "YOUR APP's NAME"
-          heroku_email: "YOUR EMAIL"
+          heroku_app_name: "muckin-test"
+          heroku_email: "adityagupta15035@outlook.com"
           appdir: "server"
