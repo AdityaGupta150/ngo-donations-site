@@ -1,5 +1,5 @@
 import React from "react";
-import MultiStep from "../react-multistep";
+import MultiStep from "./react-multistep";
 import "../css/skeleton.css";
 import StepOne from "./stepOne";
 import StepTwo from "./stepTwo";

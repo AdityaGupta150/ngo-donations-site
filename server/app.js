@@ -21,14 +21,9 @@ const route1 = require('./routes/userSignup');
 const route2 = require('./routes/orgSignup');
 const editUser = require('./routes/api.js');
 
-
 const { SESSION_SECRET } = require("./secretConfig");
 
 require("dotenv").config();
-const User = require("./models/person");
-var string = require("string-sanitizer");
-const bcrypt = require("bcrypt");
-var user;
 
 const PORT = process.env.PORT || 5000;  // changed so fronted runs on 3000 and server at 5000
 const DB_NAME = "muckin_testing"; // @note - later change it according to database used in production
@@ -58,12 +53,6 @@ db.once("open", () => {
   console.log(`Connected to the database : ${DB_NAME}`);
 });
 
-// if( process.env.NODE_ENV !== 'production' )
-//   app.use(
-//     require("cors")({
-//     origin: "*"
-//   }))
-
 app.use(
   rateLimit({
     windowMs: 24 * 60 * 60 * 1000,
@@ -72,6 +61,18 @@ app.use(
 );
 
 app.use(morgan("dev")); // to log requests made to api
+
+const whitelist = ["http://localhost:3000", "https://app.netlify.com/", "https://muckin.netlify.app"];
+app.use(
+  require("cors")({
+    origin: (origin, cb) => {
+      if(whitelist.includes(origin))
+        cb(null, true);
+      else cb('Not allowed by CORS');
+    }
+  })
+);
+
 app.use(express.urlencoded({ extended: false })); // to parse url encoded data and form inputs
 app.use(express.json()); // to parse json data
 app.use(express.static(join(__dirname, "public")));
@@ -97,8 +98,7 @@ app.use(
 
 // Routes START
 app.use("/user", userRouter); // login, logout
-app.use(signupRouter); // sign_up individual and organisation
-app.use(activitiesRouter); // image, update-details, delete-details
+
 app.use("/requests", requestRouter); // /new request
 app.use("/feeds", feedRouter); // /get feeds
 // Routes END
@@ -109,7 +109,8 @@ app.use('/api2',route2); // signup org looking for help
 
 app.use('/activity',activitiesRouter);
 app.use(reqRouter)
-app.use(lookingIndividual)
+app.use(signupRouter); // sign_up individual and organisation
+app.use(activitiesRouter); // image, update-details, delete-detailsapp.use(lookingIndividual)
 app.use(lookingOrganisation)
 app.use(willingIndividual)
 //404 and Error handlers
