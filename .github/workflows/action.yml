@@ -1,17 +1,18 @@
-name: Deploy
+name: Backend Deployment
+
 on:
   push:
     branches:
       - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: akhileshns/heroku-deploy@v3.10.9 # This is the action
-        with: 
-          dontuseforce: 1
+      - uses: akhileshns/heroku-deploy@v3.8.9   # This is the action
+        with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "muckin"
-          heroku_email: "devanshi0608@gmail.com"
-          appdir: "server"
+          heroku_app_name: "muckin-server" #Must be unique in Heroku
+          heroku_email: "adityagupta15035@outlook.com"
+          appdir: "server" # <- This will point to the api folder in your projec
