@@ -5,7 +5,7 @@ const express = require("express");
 var router = express.Router()
 //const app=express()
 const bcrypt = require("bcrypt");
-const User = require('../../models/signupSchema/WillingIndividual')
+const User = require('../../models/person')
 var user
 router.post('/willingIndividualStep1',(req,res)=>{
     bcrypt.hash(req.body.password, 10, (err, hash) => {
