@@ -64,14 +64,14 @@ app.use(
 const whitelist = ["http://localhost:3000", "http://localhost:5000/", "https://app.netlify.com/", "https://muckin.netlify.app/"];
 app.use(
   require("cors")({
-    origin: (origin, cb) => {
+    origin: "*"/*(origin, cb) => {
       if(whitelist.includes(origin))
         cb(null, true);
       else{
         console.debug(origin, " blocked!");
         cb('Not allowed by CORS');
       }
-    }
+    }*/
   })
 );
 //   app.use(
